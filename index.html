@@ -50,7 +50,7 @@
             cursor: pointer; /* Altera o cursor para indicar que é clicável */
         }
 
-        .text-box h1 {
+        .text-box h1, .text-box div {
             cursor: pointer; /* Altera o cursor para indicar que é clicável */
         }
 
@@ -111,27 +111,18 @@
 </header>
 
 <div class="container">
-    <div class="text-box">
-        <h1 onclick="toggleFullText(this)">e se você tivesse essa chance?</h1>
+    <div class="text-box" onclick="toggleFullText(this)">
+        <h1>e se você tivesse essa chance?</h1>
         posted - 18/02/2024 
         <div class="full-text">
            
         </div>
     </div>
-    <div class="container">
-        <div class="text-box">
-            <h1 onclick="toggleFullText(this)">Até parece que nada foi</h1>
-            posted - 22
-            <div class="full-text">
-                <p>É o que tá indo dentro do texto? </p>
-            </div>
-        </div>
-    </div>
     
 </div>
 <div class="container">
-    <div class="text-box">
-        <h1 onclick="toggleFullText(this)">haveria uma paz que excede? </h1>
+    <div class="text-box" onclick="toggleFullText(this)">
+        <h1>haveria uma paz que excede? </h1>
         <div class="full-text">
             
         </div>
@@ -139,8 +130,8 @@
 
 </div>
 <div class="container">
-    <div class="text-box">
-        <h1 onclick="toggleFullText(this)">pode vir algo bom de nazaré? </h1>
+    <div class="text-box" onclick="toggleFullText(this)">
+        <h1>pode vir algo bom de nazaré? </h1>
         posted - 20/02/2024
         <div class="full-text">
             
@@ -167,8 +158,8 @@
         }
     }
 
-    function toggleFullText(titleElement) {
-        const fullTextElement = titleElement.nextElementSibling;
+    function toggleFullText(element) {
+        const fullTextElement = element.querySelector('.full-text');
         const popupContent = document.getElementById('popup-content');
         popupContent.innerHTML = fullTextElement.innerHTML;
         const popup = document.getElementById('popup');
