@@ -43,7 +43,7 @@
         }
 
         .text-box {
-            background-color: #8a2be2; /* Cor acesa para a caixa de texto */
+            background-color: #1a0e26; /* Cor acesa para a caixa de texto */
             padding: 20px;
             border-radius: 10px; /* Borda arredondada */
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Sombra para efeito 3D */
@@ -78,15 +78,15 @@
     <div class="container">
         <div class="logo">lud.</div>
         <div class="heart" onclick="toggleHeart()">❤️</div>
-        <div class="phrase">abra o seu coração e veja tudo mudar</div>
+        <div class="phrase"> uma conversa do meu coração para o seu </div>
     </div>
 </header>
 
 <div class="container">
     <div class="text-box">
         <h1 onclick="toggleFullText()">e se você tivesse essa chance?</h1>
-        <div class="full-text">
-            <p>Conteúdo completo do texto que você escreveu vai aqui...</p>
+    <div class="full-text">
+           
         </div>
     </div>
     
@@ -99,29 +99,20 @@
         </div>
     </div>
 
+</div>
+<div class="container">
+    <div class="text-box">
+        <h1 onclick="toggleFullText()">Título do Texto</h1>
+        <div class="full-text">
+            <p>Conteúdo completo do texto que você escreveu vai aqui...</p>
+        </div>
+    </div>
+
 <footer>
-    <p><a href="https://github.com/luudnobre">DEVELOPED BY LUD</a> <a href="https://github.com/luudnobre"><span class="emoji">👩🏼‍💻</span></a></p>
+    <p><a href="https://github.com/luudnobre"><b>DEVELOPED BY LUD</b></a> <a href="https://github.com/luudnobre"><span class="emoji">👩🏼‍💻</span></a></p>
 </footer>
 
-<script>
-    function toggleHeart() {
-        const phraseElement = document.querySelector('.phrase');
-        if (phraseElement.textContent === 'Pequena mudança.') {
-            phraseElement.textContent = 'acontece.';
-        } else {
-            phraseElement.textContent = 'Pequena mudança.';
-        }
-    }
 
-    function toggleFullText() {
-        const fullTextElement = document.querySelector('.full-text');
-        if (fullTextElement.style.display === 'none') {
-            fullTextElement.style.display = 'block';
-        } else {
-            fullTextElement.style.display = 'none';
-        }
-    }
-</script>
 
 </body>
 </html>
