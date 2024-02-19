@@ -1,66 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newsletter</title>
+    <title>Meu Site</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom right, #000000, #6A0DAD);
+            background: linear-gradient(to bottom, #000000, #4b0082); /* Gradiente de preto para roxo-indigo */
+            color: white;
             font-family: Arial, sans-serif;
-            color: #ffffff;
         }
+
         .container {
-            width: 80%;
             max-width: 800px;
-            margin: 50px auto;
+            margin: 0 auto;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-        h1 {
+
+        .title {
+            cursor: pointer; /* Transforma o cursor em uma mãozinha ao passar por cima do título */
+        }
+
+        .arrow {
+            transition: transform 0.3s ease; /* Adiciona uma transição suave para a seta */
+        }
+
+        .content {
+            display: none; /* Oculta o conteúdo por padrão */
+            margin-top: 10px;
+            padding-left: 20px;
+            border-left: 2px solid #8a2be2; /* Adiciona uma linha à esquerda do conteúdo */
+        }
+
+        footer {
             text-align: center;
-        }
-        form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             margin-top: 20px;
         }
-        input[type="email"] {
-            padding: 10px;
-            width: 70%;
-            border: none;
-            border-radius: 5px;
+
+        footer a {
+            color: white;
+            text-decoration: none;
         }
-        input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #6A0DAD;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+
+        footer a:hover {
+            color: #8a2be2; /* Muda a cor do link quando passa o mouse por cima */
         }
-        input[type="submit"]:hover {
-            background-color: #4F086C;
+
+        .footer-text {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .emoji {
+            font-size: 1.5em;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Assine nossa Newsletter</h1>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <input type="email" name="email" placeholder="Digite seu e-mail" required>
-        <input type="submit" value="Assinar">
-    </form>
-    <?php
-    ?>
+    <h1 class="title">Adicional  <span class="arrow">&#8595;</span></h1>
+    <div class="content">
+        <h3> Na esperança de dias melhores</h3>
+
+        <div class="container">
+            <h1 class="title">Adicional  <span class="arrow">&#8595;</span></h1>
+            <div class="content">
+                <h3> Na esperança de dias melhores</h3>
+    </div>
 </div>
+
+<footer>
+    <p class="footer-text">DEVELOPED BY LUD</p>
+    <a href="https://github.com/luudnobre" class="footer-text"><span class="emoji">👩🏼‍💻</span></a>
+</footer>
 
 </body>
 </html>
