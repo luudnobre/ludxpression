@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Newsletter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .newsletter-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Minha Newsletter</h1>
+    </header>
+
+    <main>
+        <textarea id="text-input" placeholder="Digite sua newsletter aqui..."></textarea>
+        <button onclick="postNewsletter()">Publicar</button>
+        <div id="newsletter-container">
+            <!-- Aqui serão exibidas as newsletters postadas -->
+        </div>
+    </main>
+
+    <script>
+        function postNewsletter() {
+            var text = document.getElementById("text-input").value;
+            if (text.trim() === "") {
+                alert("Por favor, digite sua newsletter antes de publicar.");
+                return;
+            }
+
+            var newsletterContainer = document.getElementById("newsletter-container");
+            var newsletterItem = document.createElement("div");
+            newsletterItem.classList.add("newsletter-item");
+            newsletterItem.textContent = text;
+            newsletterContainer.appendChild(newsletterItem);
+
+            document.getElementById("text-input").value = "";
+        }
+    </script>
+</body>
+</html>
