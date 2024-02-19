@@ -47,6 +47,11 @@
             padding: 20px;
             border-radius: 10px; /* Borda arredondada */
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Sombra para efeito 3D */
+            cursor: pointer; /* Altera o cursor para indicar que é clicável */
+        }
+
+        .text-box h1 {
+            cursor: pointer; /* Altera o cursor para indicar que é clicável */
         }
 
         footer {
@@ -83,16 +88,17 @@
 </header>
 
 <div class="container">
-    <div class="text-box">
+    <div class="text-box" onclick="openNewTab()">
         <h1 onclick="toggleFullText()">e se você tivesse essa chance?</h1>
-    <div class="full-text">
+        posted - 18/02/2024 
+        <div class="full-text">
            
         </div>
     </div>
     
 </div>
 <div class="container">
-    <div class="text-box">
+    <div class="text-box" onclick="openNewTab()">
         <h1 onclick="toggleFullText()">Título do Texto</h1>
         <div class="full-text">
             <p>Conteúdo completo do texto que você escreveu vai aqui...</p>
@@ -101,7 +107,7 @@
 
 </div>
 <div class="container">
-    <div class="text-box">
+    <div class="text-box" onclick="openNewTab()">
         <h1 onclick="toggleFullText()">Título do Texto</h1>
         <div class="full-text">
             <p>Conteúdo completo do texto que você escreveu vai aqui...</p>
@@ -112,7 +118,32 @@
     <p><a href="https://github.com/luudnobre"><b>DEVELOPED BY LUD</b></a> <a href="https://github.com/luudnobre"><span class="emoji">👩🏼‍💻</span></a></p>
 </footer>
 
+<script>
+    function toggleHeart() {
+        const phraseElement = document.querySelector('.phrase');
+        if (phraseElement.textContent === ' uma conversa do meu coração para o seu ') {
+            phraseElement.textContent = ' outra frase ';
+        } else {
+            phraseElement.textContent = ' uma conversa do meu coração para o seu ';
+        }
+    }
 
+    function toggleFullText() {
+        const fullTextElement = document.querySelector('.full-text');
+        if (fullTextElement.style.display === 'none') {
+            fullTextElement.style.display = 'block';
+        } else {
+            fullTextElement.style.display = 'none';
+        }
+    }
+
+    function openNewTab() {
+        const newText = "Este é o texto que será exibido na nova aba.";
+        const newTab = window.open('', '_blank');
+        newTab.document.write(`<html><head><title>Novo Texto</title></head><body><p>${newText}</p></body></html>`);
+        newTab.document.close();
+    }
+</script>
 
 </body>
 </html>
