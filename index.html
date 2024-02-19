@@ -78,13 +78,13 @@
     <div class="container">
         <div class="logo">lud.</div>
         <div class="heart" onclick="toggleHeart()">❤️</div>
-        <div class="phrase">Pequena mudança.</div>
+        <div class="phrase">abra o seu coração e veja tudo mudar</div>
     </div>
 </header>
 
 <div class="container">
     <div class="text-box">
-        <h1 onclick="toggleFullText()">Título do Texto</h1>
+        <h1 onclick="toggleFullText()">e se você tivesse essa chance?</h1>
         <div class="full-text">
             <p>Conteúdo completo do texto que você escreveu vai aqui...</p>
         </div>
@@ -107,7 +107,7 @@
     function toggleHeart() {
         const phraseElement = document.querySelector('.phrase');
         if (phraseElement.textContent === 'Pequena mudança.') {
-            phraseElement.textContent = 'Mudança acontece.';
+            phraseElement.textContent = 'acontece.';
         } else {
             phraseElement.textContent = 'Pequena mudança.';
         }
