@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #000000, #4b0082); /* Gradiente de preto para roxo-indigo */
+            background: linear-gradient(to bottom, black, #000000); /* Gradiente de preto para roxo */
             color: white;
             font-family: Arial, sans-serif;
         }
@@ -19,19 +19,11 @@
             padding: 20px;
         }
 
-        .title {
-            cursor: pointer; /* Transforma o cursor em uma mãozinha ao passar por cima do título */
-        }
-
-        .arrow {
-            transition: transform 0.3s ease; /* Adiciona uma transição suave para a seta */
-        }
-
-        .content {
-            display: none; /* Oculta o conteúdo por padrão */
-            margin-top: 10px;
-            padding-left: 20px;
-            border-left: 2px solid #8a2be2; /* Adiciona uma linha à esquerda do conteúdo */
+        .text-box {
+            background-color: #8a2be2; /* Cor acesa para a caixa de texto */
+            padding: 20px;
+            border-radius: 10px; /* Borda arredondada */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Sombra para efeito 3D */
         }
 
         footer {
@@ -45,37 +37,34 @@
         }
 
         footer a:hover {
-            color: #8a2be2; /* Muda a cor do link quando passa o mouse por cima */
-        }
-
-        .footer-text {
-            display: inline-block;
-            margin-right: 5px;
+            color: #45043b; /* Muda a cor do link quando passa o mouse por cima */
         }
 
         .emoji {
             font-size: 1.5em;
-            vertical-align: middle;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1 class="title">Adicional  <span class="arrow">&#8595;</span></h1>
-    <div class="content">
-        <h3> Na esperança de dias melhores</h3>
-
-        <div class="container">
-            <h1 class="title">Adicional  <span class="arrow">&#8595;</span></h1>
-            <div class="content">
-                <h3> Na esperança de dias melhores</h3>
+    <div class="text-box">
+        <h1>Título do Texto</h1>
+        <h3>Conteúdo do texto que você escreveu vai aqui...</h3>
     </div>
 </div>
 
+</head>
+<body>
+
+<div class="container">
+    <div class="text-box">
+        <h1>Título do Texto</h1>
+        <h3>Conteúdo do texto que você escreveu vai aqui...</h3>
+    </div>
+</div>
 <footer>
-    <p class="footer-text">DEVELOPED BY LUD</p>
-    <a href="https://github.com/luudnobre" class="footer-text"><span class="emoji">👩🏼‍💻</span></a>
+    <p>DEVELOPED BY LUD <a href="https://github.com/luudnobre"><span class="emoji">👩🏼‍💻</span></a></p>
 </footer>
 
 </body>
