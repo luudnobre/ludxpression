@@ -75,6 +75,29 @@
         .full-text {
             display: none;
         }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+            z-index: 1000;
+            display: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -83,13 +106,13 @@
     <div class="container">
         <div class="logo">lud.</div>
         <div class="heart" onclick="toggleHeart()">❤️</div>
-        <div class="phrase"> uma conversa do meu coração para o seu </div>
+        <div class="phrase"> permita-se! </div>
     </div>
 </header>
 
 <div class="container">
-    <div class="text-box" onclick="openNewTab()">
-        <h1 onclick="toggleFullText()">e se você tivesse essa chance?</h1>
+    <div class="text-box">
+        <h1 onclick="toggleFullText(this)">e se você tivesse essa chance?</h1>
         posted - 18/02/2024 
         <div class="full-text">
            
@@ -98,8 +121,8 @@
     
 </div>
 <div class="container">
-    <div class="text-box" onclick="openNewTab()">
-        <h1 onclick="toggleFullText()">haveria uma paz que execede? </h1>
+    <div class="text-box">
+        <h1 onclick="toggleFullText(this)">haveria uma paz que excede? </h1>
         <div class="full-text">
             
         </div>
@@ -107,8 +130,8 @@
 
 </div>
 <div class="container">
-    <div class="text-box" onclick="openNewTab()">
-        <h1 onclick="toggleFullText()">pode vir algo bom de nazaré? </h1>
+    <div class="text-box">
+        <h1 onclick="toggleFullText(this)">pode vir algo bom de nazaré? </h1>
         posted - 20/02/2024
         <div class="full-text">
             
@@ -120,30 +143,32 @@
     <p><a href="https://github.com/luudnobre"><b>DEVELOPED BY LUD</b></a> <a href="https://github.com/luudnobre"><span class="emoji">👩🏼‍💻</span></a></p>
 </footer>
 
+<div class="popup" id="popup">
+    <span class="close" onclick="closePopup()">X</span>
+    <div id="popup-content"></div>
+</div>
+
 <script>
     function toggleHeart() {
         const phraseElement = document.querySelector('.phrase');
-        if (phraseElement.textContent === ' uma conversa do meu coração para o seu ') {
-            phraseElement.textContent = ' permita-se! ';
-        } else {
+        if (phraseElement.textContent === ' permita-se! ') {
             phraseElement.textContent = ' uma conversa do meu coração para o seu ';
-        }
-    }
-
-    function toggleFullText() {
-        const fullTextElement = document.querySelector('.full-text');
-        if (fullTextElement.style.display === 'none') {
-            fullTextElement.style.display = 'block';
         } else {
-            fullTextElement.style.display = 'none';
+            phraseElement.textContent = ' permita-se! ';
         }
     }
 
-    function openNewTab() {
-        const newText = "Não duvide ";
-        const newTab = window.open('', '_blank');
-        newTab.document.write(`<html><head><title>Novo Texto</title></head><body><p>${newText}</p></body></html>`);
-        newTab.document.close();
+    function toggleFullText(titleElement) {
+        const fullTextElement = titleElement.nextElementSibling;
+        const popupContent = document.getElementById('popup-content');
+        popupContent.innerHTML = fullTextElement.innerHTML;
+        const popup = document.getElementById('popup');
+        popup.style.display = 'block';
+    }
+
+    function closePopup() {
+        const popup = document.getElementById('popup');
+        popup.style.display = 'none';
     }
 </script>
 
