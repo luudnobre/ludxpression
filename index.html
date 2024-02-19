@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, black, #000000); /* Gradiente de preto para roxo */
+            background: linear-gradient(to bottom, black, #8e44ad); /* Gradiente de preto para roxo */
             color: white;
             font-family: Arial, sans-serif;
         }
@@ -17,6 +17,29 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        .header {
+            background-color: black;
+            padding: 10px 0;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+        }
+
+        .heart {
+            cursor: pointer;
+        }
+
+        .phrase {
+            font-size: 0.8em;
         }
 
         .text-box {
@@ -37,35 +60,68 @@
         }
 
         footer a:hover {
-            color: #45043b; /* Muda a cor do link quando passa o mouse por cima */
+            color: #8a2be2; /* Muda a cor do link quando passa o mouse por cima */
         }
 
         .emoji {
             font-size: 1.5em;
         }
+
+        .full-text {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="text-box">
-        <h1>Título do Texto</h1>
-        <h3>Conteúdo do texto que você escreveu vai aqui...</h3>
+<header class="header">
+    <div class="container">
+        <div class="logo">lud.</div>
+        <div class="heart" onclick="toggleHeart()">❤️</div>
+        <div class="phrase">Pequena mudança.</div>
     </div>
-</div>
-
-</head>
-<body>
+</header>
 
 <div class="container">
     <div class="text-box">
-        <h1>Título do Texto</h1>
-        <h3>Conteúdo do texto que você escreveu vai aqui...</h3>
+        <h1 onclick="toggleFullText()">Título do Texto</h1>
+        <div class="full-text">
+            <p>Conteúdo completo do texto que você escreveu vai aqui...</p>
+        </div>
     </div>
+    
 </div>
+<div class="container">
+    <div class="text-box">
+        <h1 onclick="toggleFullText()">Título do Texto</h1>
+        <div class="full-text">
+            <p>Conteúdo completo do texto que você escreveu vai aqui...</p>
+        </div>
+    </div>
+
 <footer>
-    <p>DEVELOPED BY LUD <a href="https://github.com/luudnobre"><span class="emoji">👩🏼‍💻</span></a></p>
+    <p><a href="https://github.com/luudnobre">DEVELOPED BY LUD</a> <a href="https://github.com/luudnobre"><span class="emoji">👩🏼‍💻</span></a></p>
 </footer>
+
+<script>
+    function toggleHeart() {
+        const phraseElement = document.querySelector('.phrase');
+        if (phraseElement.textContent === 'Pequena mudança.') {
+            phraseElement.textContent = 'Mudança acontece.';
+        } else {
+            phraseElement.textContent = 'Pequena mudança.';
+        }
+    }
+
+    function toggleFullText() {
+        const fullTextElement = document.querySelector('.full-text');
+        if (fullTextElement.style.display === 'none') {
+            fullTextElement.style.display = 'block';
+        } else {
+            fullTextElement.style.display = 'none';
+        }
+    }
+</script>
 
 </body>
 </html>
